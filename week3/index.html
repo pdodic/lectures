@@ -118,8 +118,23 @@
       </ul>
     </main>
     
+    <style>
+      h2:hover {
+        cursor: pointer;
+      }
+    </style>
+
     <script>
       // TO DO: Your code goes here
+      // window.alert("Hello")
+      //Don't need to add in semi-colons due to recent JS changes
+      //Alert box is called Modal dialogue - browser does nothing until someone clicks OK
+      function whenHeadingClicked() {
+        console.log("The event data is:", event)
+        event.target.style.display = 'none'
+      }
+      let heading = document.querySelector("h2")
+      heading.addEventListener("click", whenHeadingClicked)
       
     </script>
 
