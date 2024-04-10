@@ -136,6 +136,15 @@
       let heading = document.querySelector("h2")
       heading.addEventListener("click", whenHeadingClicked)
       
+      //Challenge 2
+      function doNotGoToApple(event) {
+        console.log(event)
+        window.alert("Mwahahaha!")
+        event.preventDefault();
+      }
+      const appleLink = document.querySelector("#apple")
+      appleLink.addEventListener("click", doNotGoToApple)
+
     </script>
 
   </body>
