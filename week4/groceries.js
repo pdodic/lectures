@@ -7,9 +7,21 @@ function setupListeners() {
   document.querySelector("form").addEventListener("submit", addItem)
 }
 
-setupListeners();
+document.addEventListener("DOMContentLoaded", setupListeners);
 
 function addItem(e) {
   e.preventDefault();
   console.log(e);
+  
+  let TextToAdd = document.querySelector("input").value
+  let template = document.querySelector("#new-item-template")
+  let newItem = template.content.cloneNode(true)
+  // let newItem = document.createElement("li")
+  newItem.textContent = TextToAdd
+  let ul = document.querySelector("#groceries")
+  ul.appendChild(newItem)
+
+
+
+  document.querySelector("input").value = ""
 }

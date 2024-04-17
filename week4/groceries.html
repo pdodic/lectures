@@ -26,10 +26,19 @@
     <h2>Grocery List</h2>
 
     <form>
-      <input placeholder="Add your next grocery item here", value="" id="new_item" name="item" size="60" class="p-2">
+      <input type = "text" placeholder="Add your next grocery item here", value="" 
+      id="new_item"
+      name="item"
+      size="60" 
+      class=""
+      autofocus>    
     </form>
 
-    <ul id="groceries"></ul>
+    <ul id="groceries">
+      <template id="new-item-template">
+        <li>Cookies</li>
+      </template>
+    </ul>
 
 
   </body>
