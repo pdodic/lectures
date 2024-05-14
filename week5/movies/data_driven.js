@@ -5,10 +5,32 @@ data = [
   { title: "Doctor Strange", img: 'images/doctor.jpg', desc: "Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary." },
   { title: "Apollo 13", img: 'images/apollo_13.jpg', desc: "NASA must devise a strategy to return Apollo 13 to Earth safely after the spacecraft undergoes massive internal damage putting the lives of the three astronauts on board in jeopardy." },
   { title: "Toy Story", img: 'images/toy_story.jpg', desc: "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room." },
+  { title: "Princess Bride", img: 'images/toy_story.jpg', desc: "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room." },
 ]
 
+class Movie {
+  constructor(movie_data) {
+    this.title = movie_data.title
+    this.image_source = movie_data.img
+    this.description = movie_data.desc
+  }
+
+  render(container_element) {
+    const movieContent = document.querySelector("#movie-template").content
+    let newMovieElement = movieContent.cloneNode(true)
+    newMovieElement.querySelector('h2').textContent = this.title
+    newMovieElement.querySelector('img').src = this.image_source
+    newMovieElement.querySelector('p').textContent = this.description
+    container_element.appendChild(newMovieElement)
+  }
+}
+
 const renderMovies = function () {
-  // TO DO
+  const app = document.querySelector("#app")
+  data.forEach( (movie_data) => {
+    let newMovie = new Movie(movie_data)
+    newMovie.render(app)
+  })
 }
 
 document.addEventListener("DOMContentLoaded", renderMovies)
